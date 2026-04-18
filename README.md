@@ -1,95 +1,109 @@
-# Gesture Controlled Filter Application
+# 🖐️ Gesture-Controlled Camera Filter App
 
-## 📌 Project Overview
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.5+-green.svg)](https://opencv.org/)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-Latest-orange.svg)](https://mediapipe.dev/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This project is a **Gesture Controlled Camera Filter Application** built
-using **Python**, **OpenCV**, and **MediaPipe**.\
-It allows users to control real-time camera filters using **hand
-gestures**, without using a keyboard or mouse.
+A high-performance, real-time computer vision application that leverages hand gesture recognition to switch between various cinematic filters. Built with **Python**, **OpenCV**, and **MediaPipe**, this project demonstrates seamless human-computer interaction (HCI) through motion tracking.
 
-The system detects hand landmarks and applies different visual effects
-based on recognized gestures.
+---
 
-------------------------------------------------------------------------
+## ✨ Features
 
-## 🛠 Technologies Used
+- 🚀 **Real-time Processing**: Zero-latency hand landmark detection and tracking.
+- 👋 **Intuitive Control**: Switch filters instantly using natural hand gestures.
+- 🎨 **Diverse Filter Palette**: Includes Grayscale, Cartoonize, Blur, Sepia, Edge Detection, and Inversion.
+- 🖥️ **HUD Overlay**: On-screen display indicating the active filter and hand tracking status.
+- 🛠️ **Cross-Platform**: Runs on Windows, macOS, and Linux.
 
--   Python 3.x\
--   OpenCV\
--   MediaPipe\
--   NumPy
-
-------------------------------------------------------------------------
-
-## 🎯 Features
-
--   Real-time webcam feed
--   Hand landmark detection
--   Gesture-based filter switching
--   On-screen filter indicator
--   Smooth and interactive experience
-
-------------------------------------------------------------------------
+---
 
 ## ✋ Supported Gestures & Filters
 
-  Gesture        Description              Applied Filter
-  -------------- ------------------------ ----------------
-  🖐 Open Palm    All fingers open         Grayscale
-  ✌ Peace Sign   Index + Middle finger    Cartoon
-  ✊ Fist        All fingers closed       Blur
-  ☝ One Finger   Only index finger open   Sepia
-  🤟 Rock Sign   Index + Pinky open       Edge Detection
-  👌 OK Sign     Thumb + Index close      Invert Colors
+| Gesture | Movement | Applied Filter | Description |
+| :-- | :-- | :-- | :-- |
+| ✋ | **Open Palm** | `Grayscale` | Classic black and white cinematic look. |
+| ✌️ | **Peace Sign** | `Cartoon` | Stylized bilateral filter for a comic-book effect. |
+| ✊ | **Fist** | `Blur` | High-radius Gaussian blur for privacy or focus. |
+| ☝️ | **Index Finger** | `Sepia` | Vintage warmth with a classic sepia tone. |
+| 🤟 | **Rock Sign** | `Edge Detection` | Canny edge detection for a technical/sketch layout. |
+| 👌 | **OK Sign** | `Invert` | Color bitwise inversion for a high-contrast negative look. |
 
-------------------------------------------------------------------------
+---
 
-## ⚙ How It Works
+## 🛠️ Installation & Setup
 
-1.  Webcam captures live video frames.
-2.  MediaPipe detects hand landmarks.
-3.  Finger positions are analyzed to recognize gestures.
-4.  OpenCV applies corresponding filters in real time.
-5.  Filter name is displayed on the screen.
+### 1. Prerequisites
+Ensure you have Python 3.8+ installed.
 
-------------------------------------------------------------------------
-
-## ▶ How to Run
-
-1.  Install required libraries:
-
-```{=html}
-<!-- -->
+### 2. Clone the Repository
+```bash
+git clone https://github.com/SibghaMursaleen/Gesture_Filter_App.git
+cd Gesture_Filter_App
 ```
-    pip install opencv-python mediapipe numpy
 
-2.  Run the Python script:
-
-```{=html}
-<!-- -->
+### 3. Install Dependencies
+```bash
+pip install opencv-python mediapipe numpy
 ```
-    python gesture_filter_app.py
 
-3.  Press **Q** to exit the application.
+---
 
-------------------------------------------------------------------------
+## 🚀 Usage
 
-## 🚀 Future Improvements
+Run the application using the following command:
 
--   Add gesture cooldown to avoid accidental switching
--   Video recording feature
--   Background removal or blur
--   Multi-hand support
--   AI-based gesture classification
+```bash
+python main.py
+```
 
-------------------------------------------------------------------------
+### ⌨️ Controls
+- **Gestures**: Show your hand to the camera to trigger filters.
+- **`Q` Key**: Press 'q' on your keyboard to exit the application.
 
-## 👩‍💻 Author
+---
 
-Developed as a Computer Vision mini-project using OpenCV and MediaPipe.
+## ⚙️ How it Works
 
-------------------------------------------------------------------------
+1. **Capture**: Access the webcam stream using OpenCV's `VideoCapture`.
+2. **Processing**: MediaPipe's Hand solution tracks 21 distinct 3D landmarks on the hand.
+3. **Recognition**: Custom logic determines finger states (open/closed) by comparing coordinates of finger tips vs. joints.
+4. **Rendering**: OpenCV applies image processing pipelines (Kernels, Thresholds, Transformations) based on the recognized gesture ID.
+
+---
+
+## 📂 Project Structure
+
+```text
+Gesture_Filter_App/
+├── main.py          # Core application logic
+├── README.md        # Project documentation
+└── .gitignore       # Git exclusion rules
+```
+
+---
+
+## 🚀 Future Roadmap
+
+- [ ] Add support for dual-hand gestures for combined filters.
+- [ ] Implement a recording feature to save filtered clips.
+- [ ] UI enhancement with a sidebar for settings.
+- [ ] Support for deep learning-based custom gesture training.
+
+---
 
 ## 📜 License
 
-This project is for educational purposes.
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+
+## 👤 Author
+
+**Sibgha Mursaleen**
+- [GitHub](https://github.com/SibghaMursaleen)
+- [LinkedIn](https://www.linkedin.com/in/sibgha-mursaleen/)
+
+---
+<p align="center">Made with ❤️ for Computer Vision Enthusiasts</p>
